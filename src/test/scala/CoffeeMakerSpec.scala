@@ -6,12 +6,17 @@ class CoffeeMakerSpec extends WordSpec with MustMatchers {
 
     "return frothedMilk when frothing WholeMilk" in {
 
-      CoffeeMaker.froth("wholeMilk") mustEqual "Frothed milk"
+      CoffeeMaker.froth(WholeMilk) mustEqual FrothedMilk(WholeMilk)
     }
 
     "throw exception when frothing SemiSkimmedMilk" in {
 
-      CoffeeMaker.froth("SemiSkimmedMilk") mustEqual new IllegalArgumentException
+      intercept[IllegalArgumentException](CoffeeMaker.froth(SemiSkimmedMilk))
+    }
+
+    "Return a new instance of water when heating water" in {
+
+      CoffeeMaker.heatWater(Water(20)) mustEqual Water(50)
     }
   }
 }
