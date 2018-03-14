@@ -3,5 +3,6 @@ case class Water(temperature: Int)
 
 object CoffeeMaker extends App {
 
-def heatWater(Water)
+def froth(milk : String) = "Frothed milk"
+
 }
