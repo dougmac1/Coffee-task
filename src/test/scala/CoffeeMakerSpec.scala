@@ -23,12 +23,5 @@ class CoffeeMakerSpec extends WordSpec with MustMatchers {
       CoffeeMaker.heatWater(Water(20)) mustEqual Water(40)
     }
 
-    "Return GroundCoffee when given Arabica Beans" in {
-      CoffeeMaker.grind("Arabica Beans") mustEqual GroundCoffee
-    }
-
-    "Return BrewingException when temperature specified is less than 40" in {
-      CoffeeMaker.brew() mustEqual
-    }
   }
 }
