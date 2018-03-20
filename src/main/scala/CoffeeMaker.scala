@@ -30,8 +30,6 @@ object CoffeeMaker extends App {
       FrothedMilk(WholeMilk)
     }
     case SemiSkimmedMilk => throw new IllegalArgumentException("Can't froth Semi-Skimmed Milk")
-
-
   }
 
   def grind(beans: CoffeeBeans): Future[GroundCoffee] = Future {
