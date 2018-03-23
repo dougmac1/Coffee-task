@@ -1,8 +1,8 @@
 import java.util.concurrent.Executors
-
 import scala.concurrent.{ExecutionContext, Future}
 import scala.util.{Failure, Success, Try}
 import scala.util.control.NonFatal
+
 case class Water(temperature: Int)
 abstract class Milk
 object WholeMilk extends Milk
@@ -10,7 +10,7 @@ object SemiSkimmedMilk extends Milk
 case class FrothedMilk(milk: Milk) extends Milk
 case class CoffeeBeans (beans: String)
 case class GroundCoffee(coffeeBeans: CoffeeBeans)
-case	class	BrewingException(msg:	String)	extends	Exception("The water is too cold")
+case class	BrewingException(msg:	String)	extends	Exception("The water is too cold")
 case class Coffee(water: Water, groundCoffee: GroundCoffee, frothedMilk: Option[FrothedMilk])
 
 
@@ -25,10 +25,9 @@ object CoffeeMaker extends App {
   }
 
   def froth(milk: Milk): FrothedMilk = milk match {
-    case WholeMilk => {
+    case WholeMilk =>
       println("Frothed milk successfully")
       FrothedMilk(WholeMilk)
-    }
     case SemiSkimmedMilk => throw new IllegalArgumentException("Can't froth Semi-Skimmed Milk")
   }
 
